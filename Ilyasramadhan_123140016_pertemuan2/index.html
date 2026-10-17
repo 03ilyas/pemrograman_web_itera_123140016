@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITERA Student Dashboard - Pertemuan 2</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="dashboard-wrapper">
+    <!-- Header: Profil Mahasiswa & Jam Real-Time -->
+    <header class="dashboard-header">
+      <div class="user-profile">
+        <div class="avatar"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div>
+          <h1>Halo, Ilyas Ramadhan 👋</h1>
+          <p>Teknik Informatika - Institut Teknologi Sumatera</p>
+        </div>
+      </div>
+      <div class="live-clock-card">
+        <h2 id="clock-display">00:00:00</h2>
+        <span id="date-display">Memuat tanggal...</span>
+      </div>
+    </header>
+
+    <!-- Top Widgets: Cuaca Kampus & Kutipan Harian -->
+    <section class="widget-grid">
+      <div class="widget-card weather-widget">
+        <div class="widget-header">
+          <span><i class="fa-solid fa-location-dot"></i> Cuaca Kampus ITERA</span>
+          <span class="badge">Real-Time</span>
+        </div>
+        <div class="weather-content" id="weather-content">
+          <div class="spinner"></div>
+          <p>Mengambil data cuaca...</p>
+        </div>
+      </div>
+
+      <div class="widget-card quote-widget">
+        <div class="widget-header">
+          <span><i class="fa-solid fa-quote-left"></i> Inspirasi Hari Ini</span>
+          <button id="btn-refresh-quote" class="btn-icon" title="Kutipan Baru"><i class="fa-solid fa-arrows-rotate"></i></button>
+        </div>
+        <div class="quote-content" id="quote-content">
+          <div class="spinner"></div>
+          <p>Memuat kutipan...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content: Task Management & Filter -->
+    <main class="main-dashboard-grid">
+      <!-- Form Input / Edit Tugas -->
+      <section class="card form-section">
+        <h2 id="form-heading"><i class="fa-solid fa-plus-circle"></i> Tambah Tugas Kuliah</h2>
+        <form id="task-form">
+          <input type="hidden" id="task-id">
+
+          <div class="form-group">
+            <label for="task-title">Judul Tugas / Praktikum</label>
+            <input type="text" id="task-title" placeholder="Contoh: Laporan Akhir Praktikum Web" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col">
+              <label for="task-course">Mata Kuliah</label>
+              <input type="text" id="task-course" placeholder="Contoh: Pemrograman Web" required>
+            </div>
+            <div class="form-group col">
+              <label for="task-priority">Prioritas</label>
+              <select id="task-priority">
+                <option value="Tinggi">Tinggi</option>
+                <option value="Sedang" selected>Sedang</option>
+                <option value="Rendah">Rendah</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="task-deadline">Tenggat Waktu (Deadline)</label>
+            <input type="date" id="task-deadline" required>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" id="btn-submit" class="btn btn-primary">Simpan Tugas</button>
+            <button type="button" id="btn-cancel" class="btn btn-secondary" style="display: none;">Batal Edit</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Daftar Tugas & Statistik -->
+      <section class="card tasks-section">
+        <div class="tasks-header">
+          <div>
+            <h2><i class="fa-solid fa-list-check"></i> Rencana & Tugas Kuliah</h2>
+            <p id="task-stats">0 Tugas (0 Selesai)</p>
+          </div>
+          <div class="filter-controls">
+            <button class="filter-btn active" data-filter="all">Semua</button>
+            <button class="filter-btn" data-filter="pending">Belum</button>
+            <button class="filter-btn" data-filter="completed">Selesai</button>
+          </div>
+        </div>
+
+        <div class="task-list" id="task-list-container">
+          <!-- Render dinamis via script.js -->
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
