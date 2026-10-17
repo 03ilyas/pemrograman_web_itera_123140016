@@ -6,7 +6,7 @@
 ### Identitas Mahasiswa
 - **Nama Lengkap:** Ilyas Ramadhan
 - **NIM:** 123140016
-- **Kelas Praktikum:** [Isi RA atau RB]
+- **Kelas Praktikum:** RB
 
 ---
 
