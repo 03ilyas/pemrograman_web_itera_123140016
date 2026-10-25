@@ -1,0 +1,12 @@
+.book-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+.book-card { background: #fff; border: 1px solid #e2e8f0; padding: 16px; border-radius: 8px; display: flex; flex-direction: column; justify-content: space-between; }
+.book-title { font-size: 1.1rem; color: #0f172a; margin: 0 0 4px 0; }
+.book-author { font-size: 0.9rem; color: #64748b; margin: 0 0 8px 0; }
+.status-tag { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; text-transform: uppercase; font-weight: bold; }
+.status-milik { background: #dcfce7; color: #15803d; }
+.status-baca { background: #fef9c3; color: #a16207; }
+.status-beli { background: #dbeafe; color: #1d4ed8; }
+.card-actions { display: flex; gap: 8px; margin-top: 16px; }
+.btn-edit { background: #f1f5f9; border: 1px solid #cbd5e1; padding: 4px 8px; border-radius: 4px; cursor: pointer; }
+.btn-delete { background: #fee2e2; border: 1px solid #fca5a5; color: #dc2626; padding: 4px 8px; border-radius: 4px; cursor: pointer; }
+.empty-text { text-align: center; color: #94a3b8; padding: 24px 0; }
